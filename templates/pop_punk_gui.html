@@ -1,18 +1,22 @@
-<h1>Pop Punk Song Search</h1>
-
-<h2>Type your pop punk song search here: </h2>
-<form method="POST">
-    <input name="text">
-    <input type="submit">
-</form>
-
-<style type="text/css">
-    h1{
-        font-size: 24px;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-    }
-    h2{
-        font-size: 18px;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-    }
-</style>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Pop Punk Song Search</h1>
+        <form method="POST">
+            <div class="input-group">
+                <div class="form-outline">
+                  <input name="text" type="search" id="form1" class="form-control" />
+                  <label class="form-label" for="form1">Search for some lyrics!</label>
+                </div>
+                <button type="button" class="btn btn-primary">
+                  Search
+                </button>
+              </div>
+        </form>
+    </div>
+</body>
+</html>

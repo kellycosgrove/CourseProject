@@ -45,7 +45,6 @@ def query_vsm(_in_query, _in_lyric_dict, _in_index, _in_model, _in_corpus_dict):
     result_list = []
 
     sims = _in_index[vec_tfidf]
-    print(list(enumerate(sims)))
 
     sims = sorted(enumerate(sims), key=lambda item: -item[1])
     for doc_position, doc_score in sims:
@@ -56,5 +55,18 @@ def query_vsm(_in_query, _in_lyric_dict, _in_index, _in_model, _in_corpus_dict):
 def main(query):
     lyric_dict, index, model, corpus_dict = load_vsm_components()
     result_list = query_vsm(query, lyric_dict, index, model, corpus_dict)
-    return str(result_list)
+
+    first_song = result_list[0][1][0]
+    first_artist = result_list[0][1][1]
+    
+    second_song = result_list[1][1][0]
+    second_artist = result_list[1][1][1]
+
+    third_song = result_list[2][1][0]
+    third_artist = result_list[2][1][1]
+
+    fourth_song = result_list[3][1][0]
+    fourth_artist = result_list[3][1][1]
+
+    return first_song, first_artist, second_song, second_artist, third_song, third_artist, fourth_song, fourth_artist
     
