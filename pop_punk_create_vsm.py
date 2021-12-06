@@ -9,36 +9,53 @@ import csv
 # define vars
 token = 'tiWxIWPADF87dXvHZXGNJDe432jqB1yRQBjFsvQAKlbU2HHoZGAZLrrvwjwasXOM'
 # token for Genius API
-#art_list = ['Hands Like Houses', 'The Bouncing Souls', 'Millencolin', 'Evanescence', 'Fountains Of Wayne',
-#            'AFI', 'Yours Truly', 'A Day To Remember', 'Mayday Parade', 'New Found Glory', 'Relient K',
-#            'The Red Jumpsuit Apparatus', 'Redhook', 'We The Kings', 'American Hi-Fi', 'Rise Against',
-#            'Lit', 'The Offspring', 'Alkaline Trio', 'Neck Deep', 'Jimmy Eat World', 'Bowling For Soup',
-#            'Simple Plan', 'Ramones', 'Lustra', 'Wheatus', 'Fall Out Boy', 'Sugarcult', 'Taking Back Sunday',
-#            'The All-American Rejects', 'All Time Low', 'Yellowcard', 'Paramore', 'Good Charlotte',
-#            'My Chemical Romance', 'Sum 41', 'Green Day', 'blink-182']
+art_list = ['Hands Like Houses', 'The Bouncing Souls', 'Millencolin', 'Evanescence', 'Fountains Of Wayne',
+            'AFI', 'Yours Truly', 'A Day To Remember', 'Mayday Parade', 'New Found Glory', 'Relient K',
+            'The Red Jumpsuit Apparatus', 'Redhook', 'We The Kings', 'American Hi-Fi', 'Rise Against',
+            'Lit', 'The Offspring', 'Alkaline Trio', 'Neck Deep', 'Jimmy Eat World', 'Bowling For Soup',
+            'Simple Plan', 'Ramones', 'Lustra', 'Wheatus', 'Fall Out Boy', 'Sugarcult', 'Taking Back Sunday',
+            'The All-American Rejects', 'All Time Low', 'Yellowcard', 'Paramore', 'Good Charlotte',
+            'My Chemical Romance', 'Sum 41', 'Green Day', 'blink-182']
 
-art_list = ['My Chemical Romance', 'blink-182']
 #artist list source: https://indiepanda.net/best-pop-punk-bands/
 
 # functions
 def get_lyrics(_in_art_list):
     '''
-    Gets lyrics and associated song title/artist of top 50 songs per artist through Genius API
-    Returns a dictionary like {song_lyrics_1: [title_1, artist_1], song_lyrics_2: [title_2, artist_2],...}
+    Gets lyrics and associated song title/artist of top 10 songs per artist through Genius API
+    Stores a dictionary per artist like {song_lyrics_1: [title_1, artist], song_lyrics_2: [title_2, artist],...}
     '''
     genius = Genius(token)
 
     lyrics_dict = {}
     for art in _in_art_list:
-        artist = genius.search_artist(art, sort='popularity', max_songs=5)
+        artist = genius.search_artist(art, sort='popularity', max_songs=10)
         for song in artist.songs:
             lyrics_dict[song.lyrics]=[song.title, song.artist]
+        
+        lyrics_json = json.dumps(lyrics_dict, indent = 4)
+        filename = 'artifacts/lyrics_' + art + '.json'
+        with open(filename, 'w') as convert_file:
+            convert_file.write(json.dumps(lyrics_json))
+        print("saved json for " + art)
 
-    lyrics_json = json.dumps(lyrics_dict, indent = 4)
+def join_lyrics(_in_art_list):
+    '''
+    Joins all dictionaries created in get_lyrics function
+    Returns data dictionary
+    '''
+    _out_lyrics_dict = {}
+    for art in _in_art_list:
+        filename = 'artifacts/lyrics_' + art + '.json'
+        lyric_json = open(filename)
+        art_lyrics_dict = json.loads(json.load(lyric_json))
+        _out_lyrics_dict.update(art_lyrics_dict)
+
+    lyrics_json = json.dumps(_out_lyrics_dict, indent = 4)
     with open('artifacts/lyrics.json', 'w') as convert_file:
         convert_file.write(json.dumps(lyrics_json))
 
-    return lyrics_dict
+    return _out_lyrics_dict
 
 def prepare_corpus(_in_lyrics):
     '''
@@ -80,7 +97,8 @@ def create_save_vsm(_in_corpus, _in_dict):
 
 # main
 if __name__ == "__main__":
-    lyrics_dict = get_lyrics(art_list)
+    #get_lyrics(art_list)
+    lyrics_dict = join_lyrics(art_list)
     corpus, corpus_dict = prepare_corpus(lyrics_dict)
     create_save_vsm(corpus, corpus_dict)
     
