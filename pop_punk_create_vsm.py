@@ -38,6 +38,7 @@ def get_lyrics(_in_art_list):
         with open(filename, 'w') as convert_file:
             convert_file.write(json.dumps(lyrics_json))
         print("saved json for " + art)
+        lyrics_dict = {}
 
 def join_lyrics(_in_art_list):
     '''
@@ -97,7 +98,7 @@ def create_save_vsm(_in_corpus, _in_dict):
 
 # main
 if __name__ == "__main__":
-    #get_lyrics(art_list)
+    get_lyrics(art_list)
     lyrics_dict = join_lyrics(art_list)
     corpus, corpus_dict = prepare_corpus(lyrics_dict)
     create_save_vsm(corpus, corpus_dict)
