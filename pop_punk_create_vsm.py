@@ -12,7 +12,7 @@ token = 'tiWxIWPADF87dXvHZXGNJDe432jqB1yRQBjFsvQAKlbU2HHoZGAZLrrvwjwasXOM'
 art_list = ['Hands Like Houses', 'The Bouncing Souls', 'Millencolin', 'Evanescence', 'Fountains Of Wayne',
             'AFI', 'Yours Truly', 'A Day To Remember', 'Mayday Parade', 'New Found Glory', 'Relient K',
             'The Red Jumpsuit Apparatus', 'Redhook', 'We The Kings', 'American Hi-Fi', 'Rise Against',
-            'Lit', 'The Offspring', 'Alkaline Trio', 'Neck Deep', 'Jimmy Eat World', 'Bowling For Soup',
+            'The Offspring', 'Alkaline Trio', 'Neck Deep', 'Jimmy Eat World', 'Bowling For Soup',
             'Simple Plan', 'Ramones', 'Lustra', 'Wheatus', 'Fall Out Boy', 'Sugarcult', 'Taking Back Sunday',
             'The All-American Rejects', 'All Time Low', 'Yellowcard', 'Paramore', 'Good Charlotte',
             'My Chemical Romance', 'Sum 41', 'Green Day', 'blink-182']
@@ -29,7 +29,7 @@ def get_lyrics(_in_art_list):
 
     lyrics_dict = {}
     for art in _in_art_list:
-        artist = genius.search_artist(art, sort='popularity', max_songs=10)
+        artist = genius.search_artist(art, sort='popularity', max_songs=20)
         for song in artist.songs:
             lyrics_dict[song.lyrics]=[song.title, song.artist]
         
