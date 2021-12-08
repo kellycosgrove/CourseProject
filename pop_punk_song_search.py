@@ -68,5 +68,5 @@ def main(query):
     fourth_song = result_list[3][1][0]
     fourth_artist = result_list[3][1][1]
 
-    return first_song, first_artist, second_song, second_artist, third_song, third_artist, fourth_song, fourth_artist
+    return query, first_song, first_artist, second_song, second_artist, third_song, third_artist, fourth_song, fourth_artist
     
