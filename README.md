@@ -1,4 +1,6 @@
-# CS 410 Course Project: Pop Punk Song Search Documentation
+# CS 410 Course Project: Pop Punk Song Search 
+
+# Documentation
 
 This project has two parts: The code used to create the vector space model and the code used to get a query from a user and compare it to the VSM. This documentation will cover all of the code/artifacts produced to accomplish both of these.
 
