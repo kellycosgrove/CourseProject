@@ -22,7 +22,7 @@ art_list = ['Hands Like Houses', 'The Bouncing Souls', 'Millencolin', 'Evanescen
 # functions
 def get_lyrics(_in_art_list):
     '''
-    Gets lyrics and associated song title/artist of top 10 songs per artist through Genius API
+    Gets lyrics and associated song title/artist of top 20 songs per artist through Genius API
     Stores a dictionary per artist like {song_lyrics_1: [title_1, artist], song_lyrics_2: [title_2, artist],...}
     '''
     genius = Genius(token)
