@@ -55,6 +55,8 @@ Within the **test** folder, **test_cases.md** lists out 10 lyric queries that we
 
 ## Configuring your environment
 
+You should have conda set up on your computer. If you are unsure how to do so, you can [follow these instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html).
+
 This repo has a YAML file that you can use to instantiate a virtual environment for this project, called env.yml. In the terminal, navigate to the CourseProject directory. Then, run the following command:
 
 `conda env create -f env.yml`
