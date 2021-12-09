@@ -2,7 +2,7 @@
 
 - [Project Proposal](https://github.com/kellycosgrove/CourseProject/blob/main/CS_410_Project_Proposal.pdf)
 - [Progress Report](https://github.com/kellycosgrove/CourseProject/blob/main/CS_410_Progress_Report.pdf)
-- [Self Evaluation]()
+- [Self Evaluation](https://github.com/kellycosgrove/CourseProject/blob/main/CS_410_Self_Evaluation.pdf)
 - [Demo]()
 - Documentation below
 
