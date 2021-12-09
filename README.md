@@ -3,7 +3,7 @@
 - [Project Proposal](https://github.com/kellycosgrove/CourseProject/blob/main/CS_410_Project_Proposal.pdf)
 - [Progress Report](https://github.com/kellycosgrove/CourseProject/blob/main/CS_410_Progress_Report.pdf)
 - [Self Evaluation](https://github.com/kellycosgrove/CourseProject/blob/main/CS_410_Self_Evaluation.pdf)
-- [Demo]()
+- [Demo](https://mediaspace.illinois.edu/media/t/1_6osr52la)
 - Documentation below
 
 # Documentation
