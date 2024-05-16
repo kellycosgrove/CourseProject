@@ -1,12 +1,4 @@
-# CS 410 Course Project: Pop Punk Song Search 
-
-- [Project Proposal](https://github.com/kellycosgrove/CourseProject/blob/main/CS_410_Project_Proposal.pdf)
-- [Progress Report](https://github.com/kellycosgrove/CourseProject/blob/main/CS_410_Progress_Report.pdf)
-- [Self Evaluation](https://github.com/kellycosgrove/CourseProject/blob/main/CS_410_Self_Evaluation.pdf)
-- [Demo](https://mediaspace.illinois.edu/media/t/1_6osr52la)
-- Documentation below
-
-# Documentation
+# Pop Punk Song Search 
 
 This project has two parts: The code used to create the vector space model and the code used to get a query from a user and compare it to the VSM. This documentation will cover all of the code/artifacts produced to accomplish both of these.
 
